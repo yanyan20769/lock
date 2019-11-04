@@ -1,17 +1,20 @@
 package per.yan.lock.redisson;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
+import org.springframework.validation.annotation.Validated;
 
 /**
  * @author yan.gao
  * @date 2019/10/31 4:55 下午
  */
 @Data
+@Validated
 @ConfigurationProperties(prefix = "spring.redis")
 public class RedissonConfig {
 
@@ -20,36 +23,34 @@ public class RedissonConfig {
     private String password;
     private Integer database = 0;
     private Integer timeout = 500;
-//    private Jedis jedis;
+    private Jedis jedis = new Jedis();
 
-    @Bean
     public RedissonClient redissonClient() {
         Config config = new Config();
         config.useSingleServer().setAddress("redis://" + host + ":" + port).setPassword(password)
                 .setDatabase(database)
                 .setConnectTimeout(timeout)
-//                .setConnectionPoolSize(jedis.pool.minIdle)
-        ;
+                .setConnectionPoolSize(jedis.pool.minIdle);
         //添加主从配置
         //config.useMasterSlaveServers().setMasterAddress("").setPassword("").addSlaveAddress(new String[]{"", ""});
         return Redisson.create(config);
     }
 
-//    @Data
-//    @NoArgsConstructor
-//    @AllArgsConstructor
-//    public class Jedis {
-//
-//        private Pool pool;
-//
-//        @Data
-//        @NoArgsConstructor
-//        @AllArgsConstructor
-//        public class Pool {
-//            private Integer maxActive = 300;
-//            private Integer minIdle = 100;
-//            private Integer maxIdle = 300;
-//            private Integer maxWait = 1000;
-//        }
-//    }
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class Jedis {
+
+        private Pool pool = new Pool();
+
+        @Data
+        @NoArgsConstructor
+        @AllArgsConstructor
+        public class Pool {
+            private Integer maxActive = 300;
+            private Integer minIdle = 100;
+            private Integer maxIdle = 300;
+            private Integer maxWait = 1000;
+        }
+    }
 }
