@@ -1,0 +1,55 @@
+package per.yan.lock.redisson;
+
+import lombok.Data;
+import org.redisson.Redisson;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+
+/**
+ * @author yan.gao
+ * @date 2019/10/31 4:55 下午
+ */
+@Data
+@ConfigurationProperties("spring.redis")
+public class RedissonConfig {
+
+    private String host;
+    private String port;
+    private String password;
+    private Integer database = 0;
+    private Integer timeout = 500;
+//    private Jedis jedis;
+
+    @Bean
+    public RedissonClient redissonClient() {
+        Config config = new Config();
+        config.useSingleServer().setAddress("redis://" + host + ":" + port).setPassword(password)
+                .setDatabase(database)
+                .setConnectTimeout(timeout)
+//                .setConnectionPoolSize(jedis.pool.minIdle)
+        ;
+        //添加主从配置
+        //config.useMasterSlaveServers().setMasterAddress("").setPassword("").addSlaveAddress(new String[]{"", ""});
+        return Redisson.create(config);
+    }
+
+//    @Data
+//    @NoArgsConstructor
+//    @AllArgsConstructor
+//    public class Jedis {
+//
+//        private Pool pool;
+//
+//        @Data
+//        @NoArgsConstructor
+//        @AllArgsConstructor
+//        public class Pool {
+//            private Integer maxActive = 300;
+//            private Integer minIdle = 100;
+//            private Integer maxIdle = 300;
+//            private Integer maxWait = 1000;
+//        }
+//    }
+}

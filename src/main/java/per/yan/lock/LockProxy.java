@@ -1,0 +1,12 @@
+package per.yan.lock;
+
+/**
+ * @author yan.gao
+ * @date 2019/11/4 10:27 上午
+ */
+public interface LockProxy {
+
+    boolean tryLock(String key, long timeout, long expire);
+
+    void unLock(String key);
+}
