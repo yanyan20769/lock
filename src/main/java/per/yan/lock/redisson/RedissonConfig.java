@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
  * @date 2019/10/31 4:55 下午
  */
 @Data
-@ConfigurationProperties("spring.redis")
+@ConfigurationProperties(prefix = "spring.redis")
 public class RedissonConfig {
 
     private String host;
