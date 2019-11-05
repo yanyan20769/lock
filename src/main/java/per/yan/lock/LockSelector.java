@@ -3,8 +3,8 @@ package per.yan.lock;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
-import per.yan.lock.custom.CustomLockProperties;
-import per.yan.lock.redisson.RedissonLockProperties;
+import per.yan.lock.custom.CustomLockConfig;
+import per.yan.lock.redisson.RedissonLockConfig;
 
 /**
  * @author yan.gao
@@ -23,7 +23,7 @@ public class LockSelector implements ImportSelector {
         Enum<LockPolicy> policy = attributes.getEnum("policy");
 
         return LockPolicy.CUSTOM.equals(policy)
-                ? new String[]{CustomLockProperties.class.getName()}
-                : new String[]{RedissonLockProperties.class.getName()};
+                ? new String[]{CustomLockConfig.class.getName()}
+                : new String[]{RedissonLockConfig.class.getName()};
     }
 }

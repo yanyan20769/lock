@@ -16,7 +16,7 @@ import java.lang.annotation.*;
 public @interface EnableLock {
 
     /**
-     * @see LockPolicy
+     * @see per.yan.lock.LockPolicy
      */
     LockPolicy policy() default LockPolicy.REDISSON;
 

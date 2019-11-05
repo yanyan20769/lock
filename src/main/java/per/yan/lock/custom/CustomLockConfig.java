@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import per.yan.lock.LockAspect;
 import per.yan.lock.LockProxy;
 
-public class CustomLockProperties {
+public class CustomLockConfig {
 
     @Bean
     public LockProxy lockProxy() {

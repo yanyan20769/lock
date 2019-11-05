@@ -11,7 +11,7 @@ public class LockException extends RuntimeException {
     private String message;
 
     public LockException() {
-
+        super();
     }
 
     public LockException(String message) {

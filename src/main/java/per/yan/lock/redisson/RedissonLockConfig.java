@@ -8,8 +8,8 @@ import per.yan.lock.LockAspect;
  * @author yan.gao
  * @date 2019/11/1 2:03 下午
  */
-@EnableConfigurationProperties(RedissonConfig.class)
-public class RedissonLockProperties {
+@EnableConfigurationProperties(RedissonClientConfig.class)
+public class RedissonLockConfig {
 
     @Bean
     public LockAspect lockAspect() {

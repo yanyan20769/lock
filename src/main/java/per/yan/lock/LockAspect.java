@@ -23,7 +23,7 @@ public class LockAspect {
     private LockProxy lockProxy;
 
     @Around("@annotation(per.yan.lock.Lock)")
-    public Object execute(ProceedingJoinPoint joinPoint) {
+    public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
 
@@ -56,7 +56,7 @@ public class LockAspect {
             }
         } catch (Throwable throwable) {
             log.error("lock 执行异常，异常信息=", throwable);
-            throw new RuntimeException(throwable.getMessage());
+            throw throwable;
         } finally {
             if (locked) {
                 lockProxy.unLock(finalKey);
