@@ -45,7 +45,7 @@ public class LockAspect {
 
             long timeout = lock.timeout();
 
-            locked = lockProxy.tryLock(finalKey, timeout, expire);
+            locked = lockProxy.lock(finalKey, timeout, expire);
 
             if (locked) {
                 return joinPoint.proceed();
@@ -59,7 +59,7 @@ public class LockAspect {
             throw throwable;
         } finally {
             if (locked) {
-                lockProxy.unLock(finalKey);
+                lockProxy.release(finalKey);
             }
         }
     }

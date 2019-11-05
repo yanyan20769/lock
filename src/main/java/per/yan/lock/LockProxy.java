@@ -6,7 +6,7 @@ package per.yan.lock;
  */
 public interface LockProxy {
 
-    boolean tryLock(String key, long timeout, long expire);
+    boolean lock(String key, long timeout, long expire);
 
-    void unLock(String key);
+    void release(String key);
 }

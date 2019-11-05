@@ -60,13 +60,13 @@ public class CustomLockProxy implements LockProxy {
     }
 
     @Override
-    public boolean tryLock(String key, long timeout, long expire) {
+    public boolean lock(String key, long timeout, long expire) {
         return lock(key, DEFAULT_UNIQUE_VALUE, expire / 1000L);
     }
 
     @Override
-    public void unLock(String key) {
-        unLock(key, DEFAULT_UNIQUE_VALUE);
+    public void release(String key) {
+        release(key, DEFAULT_UNIQUE_VALUE);
     }
 
     public boolean lock(String key) {
@@ -77,7 +77,7 @@ public class CustomLockProxy implements LockProxy {
         return SUCCESS.equals(redisTemplate.execute(lockScript, Collections.singletonList(key), value, expire));
     }
 
-    public boolean unLock(String key, String value) {
+    public boolean release(String key, String value) {
         return SUCCESS.equals(redisTemplate.execute(releaseScript, Collections.singletonList(key), value));
     }
 
