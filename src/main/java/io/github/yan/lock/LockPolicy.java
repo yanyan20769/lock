@@ -1,4 +1,4 @@
-package per.yan.lock;
+package io.github.yan.lock;
 
 /**
  * @author yan.gao

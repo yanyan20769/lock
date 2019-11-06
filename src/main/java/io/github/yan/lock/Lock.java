@@ -1,5 +1,6 @@
-package per.yan.lock;
+package io.github.yan.lock;
 
+import io.github.yan.lock.el.SpringELUtil;
 import org.aspectj.lang.JoinPoint;
 
 import java.lang.annotation.*;
@@ -20,7 +21,7 @@ public @interface Lock {
      * key可以使用spring el表达式指定
      * <p>
      * 对于spring el类型的key会使用
-     * {@link per.yan.lock.el.SpringELUtil#getKeyValue(JoinPoint, String)}
+     * {@link SpringELUtil#getKeyValue(JoinPoint, String)}
      * 进行解析
      * </p>
      * </strong>

@@ -1,6 +1,6 @@
-package per.yan.lock.constant;
+package io.github.yan.lock.constant;
 
-import per.yan.lock.enums.PunctuationEnum;
+import io.github.yan.lock.enums.PunctuationEnum;
 
 import java.text.MessageFormat;
 

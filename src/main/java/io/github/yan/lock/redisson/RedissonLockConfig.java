@@ -1,8 +1,8 @@
-package per.yan.lock.redisson;
+package io.github.yan.lock.redisson;
 
+import io.github.yan.lock.LockAspect;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import per.yan.lock.LockAspect;
 
 /**
  * @author yan.gao

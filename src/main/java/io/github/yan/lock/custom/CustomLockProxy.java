@@ -1,13 +1,13 @@
-package per.yan.lock.custom;
+package io.github.yan.lock.custom;
 
+import io.github.yan.lock.LockProxy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.scripting.support.ResourceScriptSource;
-import per.yan.lock.LockProxy;
-import per.yan.lock.enums.PunctuationEnum;
+import io.github.yan.lock.enums.PunctuationEnum;
 
 import javax.annotation.Resource;
 import java.net.InetAddress;

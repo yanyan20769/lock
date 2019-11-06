@@ -1,8 +1,8 @@
-package per.yan.lock.custom;
+package io.github.yan.lock.custom;
 
+import io.github.yan.lock.LockAspect;
+import io.github.yan.lock.LockProxy;
 import org.springframework.context.annotation.Bean;
-import per.yan.lock.LockAspect;
-import per.yan.lock.LockProxy;
 
 public class CustomLockConfig {
 

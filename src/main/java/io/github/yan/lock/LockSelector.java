@@ -1,10 +1,10 @@
-package per.yan.lock;
+package io.github.yan.lock;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
-import per.yan.lock.custom.CustomLockConfig;
-import per.yan.lock.redisson.RedissonLockConfig;
+import io.github.yan.lock.custom.CustomLockConfig;
+import io.github.yan.lock.redisson.RedissonLockConfig;
 
 /**
  * @author yan.gao

@@ -1,4 +1,4 @@
-package per.yan.lock;
+package io.github.yan.lock;
 
 import org.springframework.context.annotation.Import;
 
@@ -16,7 +16,7 @@ import java.lang.annotation.*;
 public @interface EnableLock {
 
     /**
-     * @see per.yan.lock.LockPolicy
+     * @see LockPolicy
      */
     LockPolicy policy() default LockPolicy.REDISSON;
 

@@ -1,5 +1,6 @@
-package per.yan.lock;
+package io.github.yan.lock;
 
+import io.github.yan.lock.el.SpringELUtil;
 import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -8,8 +9,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import per.yan.lock.constant.RedisConstant;
-import per.yan.lock.el.SpringELUtil;
+import io.github.yan.lock.constant.RedisConstant;
 
 /**
  * @author yan.gao
@@ -22,7 +22,7 @@ public class LockAspect {
     @Autowired
     private LockProxy lockProxy;
 
-    @Around("@annotation(per.yan.lock.Lock)")
+    @Around("@annotation(io.github.yan.lock.Lock)")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
