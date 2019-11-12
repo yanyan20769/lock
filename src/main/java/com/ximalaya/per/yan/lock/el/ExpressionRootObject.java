@@ -1,4 +1,4 @@
-package io.github.yan.lock.el;
+package com.ximalaya.per.yan.lock.el;
 
 import lombok.Getter;
 

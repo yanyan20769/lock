@@ -1,4 +1,4 @@
-package io.github.yan.lock;
+package com.ximalaya.per.yan.lock;
 
 import org.springframework.context.annotation.Import;
 

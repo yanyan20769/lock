@@ -1,4 +1,4 @@
-package io.github.yan.lock.enums;
+package com.ximalaya.per.yan.lock.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

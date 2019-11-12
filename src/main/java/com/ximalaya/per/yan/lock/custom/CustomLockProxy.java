@@ -1,7 +1,7 @@
-package io.github.yan.lock.custom;
+package com.ximalaya.per.yan.lock.custom;
 
-import io.github.yan.lock.LockProxy;
-import io.github.yan.lock.enums.PunctuationEnum;
+import com.ximalaya.per.yan.lock.LockProxy;
+import com.ximalaya.per.yan.lock.enums.PunctuationEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.core.io.ClassPathResource;

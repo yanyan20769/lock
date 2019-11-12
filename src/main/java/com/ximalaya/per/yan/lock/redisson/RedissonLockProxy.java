@@ -1,10 +1,10 @@
-package io.github.yan.lock.redisson;
+package com.ximalaya.per.yan.lock.redisson;
 
-import io.github.yan.lock.LockProxy;
+import com.ximalaya.per.yan.lock.LockProxy;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RedissonClient;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import io.github.yan.lock.constant.RedisConstant;
+import com.ximalaya.per.yan.lock.constant.RedisConstant;
 
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;

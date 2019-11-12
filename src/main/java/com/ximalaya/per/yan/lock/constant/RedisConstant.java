@@ -1,6 +1,6 @@
-package io.github.yan.lock.constant;
+package com.ximalaya.per.yan.lock.constant;
 
-import io.github.yan.lock.enums.PunctuationEnum;
+import com.ximalaya.per.yan.lock.enums.PunctuationEnum;
 
 import java.text.MessageFormat;
 
