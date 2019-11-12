@@ -1,10 +1,10 @@
-package com.ximalaya.per.yan.lock;
+package per.yan.lock;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.type.AnnotationMetadata;
-import com.ximalaya.per.yan.lock.custom.CustomLockConfig;
-import com.ximalaya.per.yan.lock.redisson.RedissonLockConfig;
+import per.yan.lock.custom.CustomLockConfig;
+import per.yan.lock.redisson.RedissonLockConfig;
 
 /**
  * @author yan.gao
