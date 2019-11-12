@@ -10,7 +10,7 @@ import java.text.MessageFormat;
  */
 public class RedisConstant {
 
-    public static final String APP_PREFIX = "LOCK";
+    public static final String APP_PREFIX = "APP";
 
     public static final String LOCK_PREFIX = "LOCK";
 
