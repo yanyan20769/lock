@@ -1,4 +1,4 @@
-package com.ximalaya.per.yan.lock.el;
+package per.yan.lock.el;
 
 import lombok.Getter;
 

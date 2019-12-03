@@ -1,4 +1,4 @@
-package com.ximalaya.per.yan.lock;
+package per.yan.lock;
 
 /**
  * @author yan.gao

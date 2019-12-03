@@ -1,6 +1,6 @@
-package com.ximalaya.per.yan.lock.redisson;
+package per.yan.lock.redisson;
 
-import com.ximalaya.per.yan.lock.LockAspect;
+import per.yan.lock.LockAspect;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
