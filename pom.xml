@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>per.yan</groupId>
+    <groupId>com.ximalaya.per.yan</groupId>
     <artifactId>lock</artifactId>
     <version>0.0.3</version>
 
@@ -60,10 +60,10 @@
             <version>${spring.boot.version}</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>commons-io</groupId>-->
-<!--            <artifactId>commons-io</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>commons-io</groupId>-->
+        <!--            <artifactId>commons-io</artifactId>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.redisson</groupId>
@@ -172,14 +172,24 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>disable-java8-doclint</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <additionalparam>-Xdoclint:none</additionalparam>
+            </properties>
+        </profile>
+    </profiles>
+
     <distributionManagement>
-        <!-- use the following if you're not using a snapshot version. -->
         <repository>
             <id>artifactory</id>
             <name>ximalaya-releases</name>
             <url>http://artifactory.ximalaya.com/artifactory/ximalaya-releases/</url>
         </repository>
-        <!-- use the following if you ARE using a snapshot version. -->
         <snapshotRepository>
             <id>artifactory</id>
             <name>ximalaya-snapshots</name>
