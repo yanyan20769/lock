@@ -72,9 +72,9 @@ public class CustomLockProxy implements LockProxy {
      * 默认value为 本机ip - 当前线程ID
      */
     private static String generateUniqueValue() {
-        String uniqueValue = PunctuationEnum.CONNECTOR.getValue() + Thread.currentThread().getId();
+        String uniqueValue = String.valueOf(Thread.currentThread().getId());
         try {
-            uniqueValue += InetAddress.getLocalHost();
+            uniqueValue = InetAddress.getLocalHost() + PunctuationEnum.CONNECTOR.getValue() + uniqueValue;
         } catch (UnknownHostException e) {
             log.warn("获取本机IP地址异常，异常信息=", e);
         }
