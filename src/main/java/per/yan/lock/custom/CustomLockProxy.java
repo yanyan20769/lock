@@ -1,19 +1,18 @@
 package per.yan.lock.custom;
 
-import per.yan.lock.LockProxy;
-import per.yan.lock.enums.PunctuationEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.scripting.support.ResourceScriptSource;
+import per.yan.lock.LockProxy;
+import per.yan.lock.enums.PunctuationEnum;
 
 import javax.annotation.Resource;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Collections;
-import java.util.Random;
 
 /**
  * @author yan.gao
@@ -73,7 +72,7 @@ public class CustomLockProxy implements LockProxy {
      * 默认value为 本机ip - 当前线程ID
      */
     private static String generateUniqueValue() {
-        String uniqueValue = PunctuationEnum.CONNECTOR.getValue() + Thread.currentThread().getId() + new Random().nextInt(10000);
+        String uniqueValue = PunctuationEnum.CONNECTOR.getValue() + Thread.currentThread().getId();
         try {
             uniqueValue += InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
