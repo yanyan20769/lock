@@ -1,7 +1,7 @@
-package per.yan.lock.custom;
+package com.ximalaya.yan.lock.custom;
 
-import per.yan.lock.LockAspect;
-import per.yan.lock.LockProxy;
+import com.ximalaya.yan.lock.LockAspect;
+import com.ximalaya.yan.lock.LockProxy;
 import org.springframework.context.annotation.Bean;
 
 public class CustomLockConfig {
