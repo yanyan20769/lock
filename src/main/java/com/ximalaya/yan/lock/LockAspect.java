@@ -1,7 +1,7 @@
 package com.ximalaya.yan.lock;
 
+import com.ximalaya.yan.lock.constant.RedisConstant;
 import com.ximalaya.yan.lock.el.SpringELUtil;
-import io.micrometer.core.instrument.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.ximalaya.yan.lock.constant.RedisConstant;
+import org.springframework.util.StringUtils;
 
 /**
  * @author yan.gao
@@ -35,7 +35,7 @@ public class LockAspect {
 
         boolean locked = false;
         try {
-            if (StringUtils.isBlank(key)) {
+            if (!StringUtils.hasText(key)) {
                 return joinPoint.proceed();
             }
 
