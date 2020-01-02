@@ -1,4 +1,4 @@
-package per.yan.lock;
+package com.ximalaya.yan.lock;
 
 import org.springframework.context.annotation.Import;
 
