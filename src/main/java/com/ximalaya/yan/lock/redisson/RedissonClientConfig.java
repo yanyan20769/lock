@@ -36,7 +36,7 @@ public class RedissonClientConfig {
     }
 
     @Data
-    private static class Jedis {
+    public static class Jedis {
 
         private Pool pool;
 
