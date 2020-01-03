@@ -1,4 +1,4 @@
-package com.ximalaya.yan.lock.redisson;
+package per.yan.lock.redisson;
 
 import lombok.Data;
 import org.redisson.Redisson;
@@ -25,20 +25,27 @@ public class RedissonClientConfig {
 
     @Bean
     public RedissonClient redissonClient() {
+        int poolSize = 64;
+        if (jedis != null && jedis.pool != null && jedis.pool.minIdle != null) {
+            poolSize = jedis.pool.minIdle;
+        }
+        if (pool != null && pool.minIdle != null) {
+            poolSize = pool.minIdle;
+        }
         Config config = new Config();
         config.useSingleServer().setAddress("redis://" + host + ":" + port).setPassword(password)
                 .setDatabase(database)
                 .setConnectTimeout(timeout)
-                .setConnectionPoolSize(jedis.pool.minIdle == null ? pool.minIdle : jedis.pool.minIdle);
+                .setConnectionPoolSize(poolSize);
         //添加主从配置
         //config.useMasterSlaveServers().setMasterAddress("").setPassword("").addSlaveAddress(new String[]{"", ""});
         return Redisson.create(config);
     }
 
     @Data
-    private static class Jedis {
+    public static class Jedis {
 
-        private Pool pool;
+        public Pool pool;
 
         @Data
         public static class Pool {

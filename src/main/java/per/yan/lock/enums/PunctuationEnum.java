@@ -1,4 +1,4 @@
-package com.ximalaya.yan.lock.enums;
+package per.yan.lock.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
