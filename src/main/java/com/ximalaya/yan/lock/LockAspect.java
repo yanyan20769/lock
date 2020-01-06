@@ -1,7 +1,7 @@
-package per.yan.lock;
+package com.ximalaya.yan.lock;
 
-import per.yan.lock.constant.RedisConstant;
-import per.yan.lock.el.SpringELUtil;
+import com.ximalaya.yan.lock.constant.RedisConstant;
+import com.ximalaya.yan.lock.el.SpringELUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -22,7 +22,7 @@ public class LockAspect {
     @Autowired
     private LockProxy lockProxy;
 
-    @Around("@annotation(per.yan.lock.Lock)")
+    @Around("@annotation(com.ximalaya.yan.lock.Lock)")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
 
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
