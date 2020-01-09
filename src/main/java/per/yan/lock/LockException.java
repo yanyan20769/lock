@@ -8,8 +8,6 @@ public class LockException extends RuntimeException {
 
     private static final long serialVersionUID = -8502385996266165615L;
 
-    private String message;
-
     public LockException() {
         super();
     }
