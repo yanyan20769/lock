@@ -1,6 +1,6 @@
-package per.yan.lock.constant;
+package com.ximalaya.yan.lock.constant;
 
-import per.yan.lock.enums.PunctuationEnum;
+import com.ximalaya.yan.lock.enums.PunctuationEnum;
 
 import java.text.MessageFormat;
 

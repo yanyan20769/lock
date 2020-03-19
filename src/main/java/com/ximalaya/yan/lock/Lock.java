@@ -1,6 +1,6 @@
-package per.yan.lock;
+package com.ximalaya.yan.lock;
 
-import per.yan.lock.el.SpringELUtil;
+import com.ximalaya.yan.lock.el.SpringELUtil;
 import org.aspectj.lang.JoinPoint;
 
 import java.lang.annotation.*;
