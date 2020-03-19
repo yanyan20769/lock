@@ -1,4 +1,4 @@
-package com.ximalaya.yan.lock.redisson;
+package per.yan.lock.redisson;
 
 import lombok.Data;
 import org.redisson.Redisson;
