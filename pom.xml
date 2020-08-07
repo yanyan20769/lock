@@ -174,17 +174,4 @@
         </profile>
     </profiles>
 
-    <distributionManagement>
-        <repository>
-            <id>artifactory</id>
-            <name>ximalaya-releases</name>
-            <url>http://artifactory.ximalaya.com/artifactory/ximalaya-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>artifactory</id>
-            <name>ximalaya-snapshots</name>
-            <url>http://artifactory.ximalaya.com/artifactory/ximalaya-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
 </project>
