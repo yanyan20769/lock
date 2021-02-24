@@ -1,15 +1,17 @@
 package per.yan.lock;
 
-import per.yan.lock.constant.RedisConstant;
-import per.yan.lock.el.SpringELUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
+import per.yan.lock.el.SpringELUtil;
+
+import javax.annotation.Resource;
 
 /**
  * @author yan.gao
@@ -17,9 +19,13 @@ import org.springframework.util.StringUtils;
  */
 @Slf4j
 @Aspect
+@Component
 public class LockAspect {
 
-    @Autowired
+    @Value("${spring.application.name}")
+    private String appName;
+
+    @Resource
     private LockProxy lockProxy;
 
     @Around("@annotation(per.yan.lock.Lock)")
@@ -43,9 +49,7 @@ public class LockAspect {
 
             long expire = lock.expire();
 
-            long timeout = lock.timeout();
-
-            locked = lockProxy.lock(finalKey, timeout, expire);
+            locked = lockProxy.lock(finalKey, expire);
 
             if (locked) {
                 return joinPoint.proceed();
@@ -72,8 +76,6 @@ public class LockAspect {
             Object keyValue = SpringELUtil.getKeyValue(joinPoint, key);
             key = keyValue == null ? "" : keyValue.toString();
         }
-
-        return RedisConstant.appendLockPrefix(key);
+        return appName + ":" + key;
     }
-
 }

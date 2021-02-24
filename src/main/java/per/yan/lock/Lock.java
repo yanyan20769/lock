@@ -1,6 +1,5 @@
 package per.yan.lock;
 
-import per.yan.lock.el.SpringELUtil;
 import org.aspectj.lang.JoinPoint;
 
 import java.lang.annotation.*;
@@ -21,7 +20,7 @@ public @interface Lock {
      * key可以使用spring el表达式指定
      * <p>
      * 对于spring el类型的key会使用
-     * {@link SpringELUtil#getKeyValue(JoinPoint, String)}
+     * {@link per.yan.lock.el.SpringELUtil#getKeyValue(JoinPoint, String)}
      * 进行解析
      * </p>
      * </strong>
@@ -39,15 +38,8 @@ public @interface Lock {
     long expire() default 60000L;
 
     /**
-     * 获取锁超时时间 单位毫秒
-     *
-     * @see EnableLock#policy()
-     */
-    long timeout() default 0L;
-
-    /**
      * 获取锁异常时的错误描述
      */
-    String errorMessage() default "";
+    String errorMessage() default "获取分布式锁失败!";
 
 }
