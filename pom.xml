@@ -55,166 +55,166 @@
             <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
-    <!--    <build>-->
-    <!--        <finalName>${project.artifactId}</finalName>-->
-    <!--        <sourceDirectory>src/main/java</sourceDirectory>-->
-    <!--        <testSourceDirectory>src/test/java</testSourceDirectory>-->
-    <!--        <resources>-->
-    <!--            <resource>-->
-    <!--                <directory>src/main/resources</directory>-->
-    <!--            </resource>-->
-    <!--        </resources>-->
-    <!--        <testResources>-->
-    <!--            <testResource>-->
-    <!--                <directory>src/test/resources</directory>-->
-    <!--            </testResource>-->
-    <!--        </testResources>-->
-    <!--        <outputDirectory>target/classes</outputDirectory>-->
-    <!--        <testOutputDirectory>target/test-classes</testOutputDirectory>-->
-    <!--        <directory>target</directory>-->
-    <!--        <pluginManagement>-->
-    <!--            <plugins>-->
-    <!--                <plugin>-->
-    <!--                    <groupId>org.apache.maven.plugins</groupId>-->
-    <!--                    <artifactId>maven-source-plugin</artifactId>-->
-    <!--                    <version>2.4</version>-->
-    <!--                    <executions>-->
-    <!--                        <execution>-->
-    <!--                            <phase>package</phase>-->
-    <!--                            <goals>-->
-    <!--                                <goal>jar</goal>-->
-    <!--                                <goal>test-jar</goal>-->
-    <!--                            </goals>-->
-    <!--                        </execution>-->
-    <!--                    </executions>-->
-    <!--                </plugin>-->
-    <!--                <plugin>-->
-    <!--                    <groupId>org.apache.maven.plugins</groupId>-->
-    <!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
-    <!--                    <version>2.10.1</version>-->
-    <!--                    <executions>-->
-    <!--                        <execution>-->
-    <!--                            <goals>-->
-    <!--                                <goal>jar</goal>-->
-    <!--                                <goal>javadoc</goal>-->
-    <!--                            </goals>-->
-    <!--                            <phase>package</phase>-->
-    <!--                        </execution>-->
-    <!--                    </executions>-->
-    <!--                </plugin>-->
-    <!--                <plugin>-->
-    <!--                    <groupId>org.apache.maven.plugins</groupId>-->
-    <!--                    <artifactId>maven-compiler-plugin</artifactId>-->
-    <!--                    <version>3.2</version>-->
-    <!--                    <configuration>-->
-    <!--                        <encoding>UTF-8</encoding>-->
-    <!--                        <source>${java.version}</source>-->
-    <!--                        <target>${java.version}</target>-->
-    <!--                        <compilerVersion>${java.version}</compilerVersion>-->
-    <!--                    </configuration>-->
-    <!--                </plugin>-->
-    <!--                <plugin>-->
-    <!--                    <artifactId>maven-surefire-plugin</artifactId>-->
-    <!--                    <version>2.19</version>-->
-    <!--                    <configuration>-->
-    <!--                        <skip>false</skip>-->
-    <!--                        <includes>-->
-    <!--                            <include>**/*Test.java</include>-->
-    <!--                        </includes>-->
-    <!--                        <forkMode>always</forkMode>-->
-    <!--                        <argLine>-Dlog4j.configuration=</argLine>-->
-    <!--                    </configuration>-->
-    <!--                    <executions>-->
-    <!--                        <execution>-->
-    <!--                            <id>test</id>-->
-    <!--                            <phase>verify</phase>-->
-    <!--                            <goals>-->
-    <!--                                <goal>test</goal>-->
-    <!--                            </goals>-->
-    <!--                            <inherited>false</inherited>-->
-    <!--                            <configuration>-->
-    <!--                                <parallel>false</parallel>-->
-    <!--                            </configuration>-->
-    <!--                        </execution>-->
-    <!--                    </executions>-->
-    <!--                </plugin>-->
-    <!--            </plugins>-->
-    <!--        </pluginManagement>-->
-    <!--        <plugins>-->
-    <!--            <plugin>-->
-    <!--                <artifactId>maven-javadoc-plugin</artifactId>-->
-    <!--            </plugin>-->
-    <!--            <plugin>-->
-    <!--                <artifactId>maven-source-plugin</artifactId>-->
-    <!--            </plugin>-->
-    <!--            <plugin>-->
-    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
-    <!--            </plugin>-->
-    <!--            <plugin>-->
-    <!--                <artifactId>maven-surefire-plugin</artifactId>-->
-    <!--            </plugin>-->
-    <!--        </plugins>-->
-    <!--    </build>-->
-
-    <!--    <profiles>-->
-    <!--        <profile>-->
-    <!--            <id>disable-java8-doclint</id>-->
-    <!--            <activation>-->
-    <!--                <jdk>[1.8,)</jdk>-->
-    <!--            </activation>-->
-    <!--            <properties>-->
-    <!--                <additionalparam>-Xdoclint:none</additionalparam>-->
-    <!--            </properties>-->
-    <!--        </profile>-->
-    <!--    </profiles>-->
-
-
-    <build>
-        <pluginManagement>
+        <build>
+            <finalName>${project.artifactId}</finalName>
+            <sourceDirectory>src/main/java</sourceDirectory>
+            <testSourceDirectory>src/test/java</testSourceDirectory>
+            <resources>
+                <resource>
+                    <directory>src/main/resources</directory>
+                </resource>
+            </resources>
+            <testResources>
+                <testResource>
+                    <directory>src/test/resources</directory>
+                </testResource>
+            </testResources>
+            <outputDirectory>target/classes</outputDirectory>
+            <testOutputDirectory>target/test-classes</testOutputDirectory>
+            <directory>target</directory>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                    <goal>test-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>jar</goal>
+                                    <goal>javadoc</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.2</version>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                            <source>${java.version}</source>
+                            <target>${java.version}</target>
+                            <compilerVersion>${java.version}</compilerVersion>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>2.19</version>
+                        <configuration>
+                            <skip>false</skip>
+                            <includes>
+                                <include>**/*Test.java</include>
+                            </includes>
+                            <forkMode>always</forkMode>
+                            <argLine>-Dlog4j.configuration=</argLine>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>test</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <inherited>false</inherited>
+                                <configuration>
+                                    <parallel>false</parallel>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <version>${deploy-maven-plugin.version}</version>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-source-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
                 </plugin>
             </plugins>
-        </pluginManagement>
+        </build>
 
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <version>${flatten-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <!-- Tidy up all POMs before they are published -->
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>flatten</goal>
-                        </goals>
-                        <configuration>
-                            <updatePomFile>true</updatePomFile>
-                            <flattenMode>oss</flattenMode>
-                            <pomElements>
-                                <parent>expand</parent>
-                                <distributionManagement>remove</distributionManagement>
-                                <repositories>remove</repositories>
-                                <organization>remove</organization>
-                            </pomElements>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>flatten.clean</id>
-                        <phase>clean</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+        <profiles>
+            <profile>
+                <id>disable-java8-doclint</id>
+                <activation>
+                    <jdk>[1.8,)</jdk>
+                </activation>
+                <properties>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </properties>
+            </profile>
+        </profiles>
+
+
+<!--    <build>-->
+<!--        <pluginManagement>-->
+<!--            <plugins>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-deploy-plugin</artifactId>-->
+<!--                    <version>${deploy-maven-plugin.version}</version>-->
+<!--                </plugin>-->
+<!--            </plugins>-->
+<!--        </pluginManagement>-->
+
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.codehaus.mojo</groupId>-->
+<!--                <artifactId>flatten-maven-plugin</artifactId>-->
+<!--                <version>${flatten-maven-plugin.version}</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        &lt;!&ndash; Tidy up all POMs before they are published &ndash;&gt;-->
+<!--                        <id>flatten</id>-->
+<!--                        <phase>process-resources</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>flatten</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <updatePomFile>true</updatePomFile>-->
+<!--                            <flattenMode>oss</flattenMode>-->
+<!--                            <pomElements>-->
+<!--                                <parent>expand</parent>-->
+<!--                                <distributionManagement>remove</distributionManagement>-->
+<!--                                <repositories>remove</repositories>-->
+<!--                                <organization>remove</organization>-->
+<!--                            </pomElements>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                    <execution>-->
+<!--                        <id>flatten.clean</id>-->
+<!--                        <phase>clean</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>clean</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
     <repositories>
         <repository>
