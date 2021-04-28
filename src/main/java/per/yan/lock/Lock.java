@@ -35,7 +35,7 @@ public @interface Lock {
     /**
      * 锁失效时间 默认60秒
      */
-    long expire() default 60000L;
+    long expire() default 60L;
 
     /**
      * 获取锁异常时的错误描述
